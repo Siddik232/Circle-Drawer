@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: visual-app
+  namespace: hello-kubernetes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: visual-app
+  template:
+    metadata:
+      labels:
+        app: visual-app
+    spec:
+      containers:
+        - name: visual-app
+          image: visual-app:latest
+          ports:
+            - containerPort: 8080

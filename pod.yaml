@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: visual-app-pod
+  namespace: hello-kubernetes
+  labels:
+    app: visual-app
+spec:
+  containers:
+    - name: visual-app
+      image: visual-app:latest
+      ports:
+        - containerPort: 8080
